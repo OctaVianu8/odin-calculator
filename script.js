@@ -1,5 +1,6 @@
-console.log("Hello world!")
-
+let displayValue = '(4050 / 10 - 5) / 100 = 4';
+let display = document.querySelector('.display');
+let backspaceButton = document.querySelector('#delete')
 let buttonStrings = [
     'C','()','%','/',
     '7','8','9','*',
@@ -9,13 +10,5 @@ let buttonStrings = [
 ]
 
 generateButtons()
-
-function generateButtons()
-{
-    buttonStrings.forEach(string => {
-        let currButton = document.createElement('button');
-        currButton.textContent = string;
-        currButton.className = 'calculator-button';
-        document.querySelector('.buttons-container').appendChild(currButton);
-    })
-}
+display.textContent = displayValue;
+backspaceButton.addEventListener('click', backspace)
